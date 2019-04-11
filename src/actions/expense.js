@@ -1,6 +1,5 @@
 import axios from "axios";
 import {
-  CREATE_EXPENSE,
   GET_EXPENSES,
   ADD_EXPENSE,
   GET_MISC,
@@ -90,7 +89,6 @@ export const getAllExpenses = () => {
 };
 
 export const createExpense = data => {
-  console.log(data);
   return {
     type: ADD_EXPENSE,
     payload: {

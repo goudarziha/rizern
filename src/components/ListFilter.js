@@ -3,11 +3,15 @@ import { View, Text, Picker } from "react-native";
 import { connect } from "react-redux";
 import styles from "../styles";
 import { sortHigh, sortLow } from "../actions/expense";
+import PropTypes from "prop-types";
 
 class ListExpense extends Component {
   handlePickerValueChange = (value, index) => {
     value === "low" ? this.props.sortLow() : this.props.sortHigh();
-    console.log(this.props.expenses);
+  };
+  static propTypes = {
+    sortHigh: PropTypes.func.isRequired,
+    sortLow: PropTypes.func.isRequired
   };
   render() {
     return (
